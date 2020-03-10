@@ -26,7 +26,6 @@ before_install:
   - sudo systemctl stop apt-daily.timer;
   - sudo systemctl stop apt-daily-upgrade.service;
   - sudo systemctl stop apt-daily-upgrade.timer;
-  - bash .travis/waitForAptStop.sh
   - sudo apt-get install -y dnsutils
   - sudo chgrp travis /var/run/docker.sock
   - docker version
@@ -42,6 +41,6 @@ jobs:
       - wget `curl -s https://api.github.com/repos/openshift/origin/releases/latest | jq -r ".assets[] | select(.name | test(\"linux-64bit\")) | .browser_download_url" | grep -i client-tools`
       - tar xvfz `ls openshift-origin-client-tools-*.tar.gz` --strip-components=1 -C $HOME/bin
       - oc version
-      - ./setupAppNavTestEnv.sh https://9.30.245.9:6443 kubeadmin 4Gq4g-5m9gV-MFnAc-FiHUH ocp juniarti
+      - ./setupAppNavTestEnv.sh
     
     
