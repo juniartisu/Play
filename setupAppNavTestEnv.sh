@@ -13,7 +13,9 @@ echo $TRAVIS_PULL_REQUEST
 echo $TRAVIS_BRANCH
 
 if [ "$TRAVIS" == "true" ] && [ "$TRAVIS_TAG"  == "" ]; then
-     echo "OLA"
+     echo "Branch do not have tag"
+else
+     echo "Branch has tag"
 fi
 
 echo "GOODBYE JUNI"
