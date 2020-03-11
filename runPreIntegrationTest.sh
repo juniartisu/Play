@@ -14,7 +14,10 @@ echo $PLATFORM_PASSWORD
 echo $TRAVIS_BRANCH
 echo $TRAVIS_TAG
 
-if [ "$TRAVIS" == "true" ] && [ "$TRAVIS_TAG"  == "" ]; then
+gitTag=`git tag`
+echo $gitTag
+
+if [ "$TRAVIS" == "true" ] && [ "$gitTag"  == "" ]; then
      echo "Branch do not have tag"
 else
      echo "Branch has tag"
