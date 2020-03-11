@@ -15,5 +15,3 @@ else
      exit 1
 fi
 echo "########## Login completed on $(date)  ##########"
-
-echo "GOODBYE JUNI"
