@@ -41,5 +41,6 @@ jobs:
       script:
       - echo "Tag is present"
       - ./setupAppNavTestEnv.sh $OCP_URL $OCP_USER $OCP_PWD $DOCKER_USER
+
     
     
