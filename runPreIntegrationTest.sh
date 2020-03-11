@@ -21,7 +21,7 @@ if [ "$TRAVIS" == "true" ] && [ "$gitTag"  == "" ]; then
      echo "Branch do not have tag"
 else
      echo "Branch has tag"
-     ./setupAppNavTest.sh $OCP_URL $OCP_USER $OCP_PWD $DOCKER_USER -p
+     ./setupAppNavTestEnv.sh $OCP_URL $OCP_USER $OCP_PWD $DOCKER_USER -p
 fi
 
 echo "GOODBYE JUNI"
