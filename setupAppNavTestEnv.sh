@@ -1,19 +1,22 @@
 #!/bin/bash
 
+echo "JUNI start"
+echo $TRAVIS_TAG
+echo "JUNI END"
 
-echo "HELLO JUNI"
-echo $DOCKER_USER
-echo $DOCKER_PWD
-echo $PLATFORM_URL
-echo $PLATFORM_USERNAME
-echo $PLATFORM_PASSWORD
-
-echo $TRAVIS
-echo $TRAVIS_PULL_REQUEST
-echo $TRAVIS_BRANCH
+platformURL=$1
+platformUserName=$2
+platformPassword=$3
 
 if [ "$TRAVIS" == "true" ] && [ "$TRAVIS_TAG"  == "" ]; then
-     echo "OLA"
+     echo "HAS TAG"
+     oc login -u $platformUsername -p $platformPassword $platformURL --insecure-skip-tls-verify
+     if [ $? -eq 0 ]; then
+          echo "########## OC login successful ##########"
+     else
+          echo "########## OC login failed, exiting ##########"
+          exit 1
+     fi
 fi
 
 echo "GOODBYE JUNI"
