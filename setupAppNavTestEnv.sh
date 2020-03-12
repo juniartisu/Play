@@ -9,6 +9,8 @@ echo "Git Tag: $gitTag"
 
 if [ "$TRAVIS" == "true" ] && [ "$TRAVIS_TAG"  == "" ]; then
      echo "HAS TAG"
+else
+     echo "DOES NOT HAVE TAG"
 fi
 
 echo "GOODBYE JUNI"
