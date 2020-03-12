@@ -7,6 +7,9 @@ echo "JUNI END"
 gitTag=`git tag`
 echo "Git Tag: $gitTag"
 
+test=`git tag -ln --format '%(subject)' $TRAVIS_TAG`
+echo $test
+
 if [ "$TRAVIS" == "true" ] && [ "$TRAVIS_TAG"  == "" ]; then
      echo "HAS TAG"
 else
