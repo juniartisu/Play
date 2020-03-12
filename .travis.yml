@@ -33,8 +33,6 @@ jobs:
       script:
       - uname -a
       - cat /etc/issue
-      if: tag IS present
-      script:
       - echo "Tag is present test"
       - ./setupAppNavTestEnv.sh
     
