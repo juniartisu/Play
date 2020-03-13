@@ -1,20 +1,17 @@
 #!/bin/bash
+platformURL=$1
+platformUsername=$2
+platformPassword=$3
+platform=$4
+namespace=$5
 
-
-echo "HELLO JUNI"
-echo $DOCKER_USER
-echo $DOCKER_PWD
-echo $PLATFORM_URL
-echo $PLATFORM_USERNAME
-echo $PLATFORM_PASSWORD
-echo $JUNI_VAR
-
-echo $TRAVIS
-echo $TRAVIS_PULL_REQUEST
-echo $TRAVIS_BRANCH
-
-if [ "$TRAVIS" == "true" ] && [ "$TRAVIS_TAG"  == "" ]; then
-     echo "OLLA"
+echo "########## Login started on $(date)  ##########"
+echo "oc login -u $platformUsername -p $platformPassword $platformURL"
+oc login -u $platformUsername -p $platformPassword $platformURL --insecure-skip-tls-verify  
+if [ $? -eq 0 ]; then
+     echo "########## OC login successful ##########"
+else
+     echo "########## OC login failed, exiting ##########"
+     exit 1
 fi
-
-echo "GOODBYE JUNI"
+echo "########## Login completed on $(date)  ##########"

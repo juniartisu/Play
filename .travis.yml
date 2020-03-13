@@ -3,10 +3,6 @@ language: bash
 services:
   - docker
 
-env:
-  global:
-    - DOCKER_USER=juniarti DOCKER_PWD=j12l18a90c PLATFORM_URL=https://9.30.245.9:6443 PLATFORM_USERNAME=kubeadmin PLATFORM_PASSWORD=4Gq4g-5m9gV-MFnAc-FiHUH
-   
 group: bluezone
 
 dist: xenial
@@ -40,6 +36,6 @@ jobs:
       - wget `curl -s https://api.github.com/repos/openshift/origin/releases/latest | jq -r ".assets[] | select(.name | test(\"linux-64bit\")) | .browser_download_url" | grep -i client-tools`
       - tar xvfz `ls openshift-origin-client-tools-*.tar.gz` --strip-components=1 -C $HOME/bin
       - oc version
-      - ./setupAppNavTestEnv.sh 
+      - ./runPreIntegrationTest.sh
     
     
