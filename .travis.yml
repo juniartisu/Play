@@ -34,7 +34,7 @@ jobs:
       script:
       - uname -a
       - cat /etc/issue
-      - echo "Tag is present test"
       - ./setupAppNavTestEnv.sh
+
     
     
