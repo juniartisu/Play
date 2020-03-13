@@ -24,7 +24,8 @@ before_install:
   - sudo systemctl stop apt-daily-upgrade.timer;
   - sudo apt-get install -y dnsutils
   - sudo chgrp travis /var/run/docker.sock
-  - docker version
+  - echo $TRAVIS_TAG
+  - echo `git tag`
   
 jobs:
   include:
@@ -33,9 +34,7 @@ jobs:
       script:
       - uname -a
       - cat /etc/issue
-      - wget `curl -s https://api.github.com/repos/openshift/origin/releases/latest | jq -r ".assets[] | select(.name | test(\"linux-64bit\")) | .browser_download_url" | grep -i client-tools`
-      - tar xvfz `ls openshift-origin-client-tools-*.tar.gz` --strip-components=1 -C $HOME/bin
-      - oc version
-      - ./runPreIntegrationTest.sh
+      - ./setupAppNavTestEnv.sh
+
     
     
