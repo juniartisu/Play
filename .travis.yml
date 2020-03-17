@@ -34,7 +34,11 @@ jobs:
       script:
       - uname -a
       - cat /etc/issue
-      - echo "Tag is present test"
+      notifications:
+        email:
+          recipients:
+            - jun1art1@yahoo.com
+          if: branch = master
       - ./setupAppNavTestEnv.sh
     
     
