@@ -34,6 +34,7 @@ jobs:
       script:
       - uname -a
       - cat /etc/issue
+      - ./setupAppNavTestEnv.sh
       notifications:
         email:
           recipients:
