@@ -40,5 +40,6 @@ jobs:
             - jun1art1@yahoo.com
           if: branch = master
       - ./setupAppNavTestEnv.sh
+
     
     
