@@ -35,12 +35,16 @@ jobs:
       - uname -a
       - cat /etc/issue
       - ./runTest.sh
+      - ./setupAppNavTestEnv.sh
+    - stage: email-notif
+      os: linux 
       notifications:
         email:
           recipients:
-            - jun1art1@yahoo.com
-          if: branch = master
-      - ./setupAppNavTestEnv.sh
+            - jun1art1@gmail.com
+      script:
+        - ./setupAppNavTestEnv.sh
+
 
     
     
