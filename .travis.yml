@@ -42,6 +42,9 @@ jobs:
         email:
           recipients:
             - jun1art1@yahoo.com
+      script:
+        - ./setupAppNavTest.sh
+        
 
     
     
