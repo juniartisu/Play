@@ -33,8 +33,12 @@ jobs:
       os: linux
       script:
       - uname -a
-      - cat /etc/issue
-      - ./setupAppNavTestEnv.sh
+      notifications:
+        email:
+          if: branch = master
+          recipients:
+            - jun1art1@yahoo.com
+      - ./runPreIntegrationTest.sh
 
     
     
