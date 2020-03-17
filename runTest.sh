@@ -2,6 +2,8 @@
 gitTag=`git tag`
 echo "Git Tag: $gitTag"
 
-if [ "$TRAVIS" == "true" ] && [ "$gitTag"  != "" ]; then
-     echo "Branch has tag, so running tests now"
+if [ "$TRAVIS" == "true" ]; then
+     echo "Travis is true"
+else 
+     echo "Travis is false"
 fi
