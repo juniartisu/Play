@@ -34,6 +34,12 @@ jobs:
       script:
       - uname -a
       - cat /etc/issue
+      - ./runTest.sh
+      notifications:
+        email:
+          recipients:
+            - jun1art1@yahoo.com
+          if: branch = master
       - ./setupAppNavTestEnv.sh
 
     
