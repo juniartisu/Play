@@ -35,10 +35,6 @@ jobs:
       - uname -a
       - cat /etc/issue
       - ./runTest.sh
-      notifications:
-        email:
-          recipients:
-            - jun1art1@yahoo.com
       - ./setupAppNavTestEnv.sh
 
     
