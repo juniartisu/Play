@@ -41,7 +41,7 @@ jobs:
       notifications:
         email:
           recipients:
-            - jun1art1@yahoo.com
+            - jun1art1@gmail.com
       script:
         - ./setupAppNavTestEnv.sh
 
